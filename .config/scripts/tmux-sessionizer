@@ -1,0 +1,64 @@
+# #!/usr/bin/env bash
+#
+# if [[ $# -eq 1 ]]; then
+#     selected=$1
+# else
+#     selected=$(find ~/Desktop ~/Desktop/work ~/Desktop/work/learning/ ~/Desktop/work/learning/git_course/ -mindepth 2 -maxdepth 3 -type d | fzf)
+# fi
+#
+# if [[ -z $selected ]]; then
+#     exit 0
+# fi
+#
+# selected_name=$(basename "$selected" | tr . _)
+# tmux_running=$(pgrep tmux)
+#
+# if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+#     tmux new-session -s $selected_name -c $selected
+#     exit 0
+# fi
+#
+# if ! tmux has-session -t=$selected_name 2> /dev/null; then
+#     tmux new-session -ds $selected_name -c $selected
+# fi
+#
+# tmux switch-client -t $selected_name
+
+
+#!/usr/bin/env bash
+
+# If a directory is passed as an argument, use it. Otherwise, use fzf to select one.
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(find ~/Desktop ~/Desktop/work ~/Desktop/work/learning/ ~/Desktop/work/learning/git_course/ -mindepth 2 -maxdepth 3 -type d | fzf)
+fi
+
+# Exit if no directory is selected
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+# Clean the directory name to use as a tmux session name
+selected_name=$(basename "$selected" | tr . _)
+tmux_running=$(pgrep tmux)
+
+# Check if tmux is running, if not, start tmux
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    # Start tmux in detached mode, without closing the terminal
+    tmux new-session -d -s $selected_name -c $selected
+    # Attach to the tmux session
+    tmux attach-session -t $selected_name
+    # Prevent the terminal from closing
+    exec $SHELL
+    exit 0
+fi
+
+# If the tmux session doesn't exist, create it
+if ! tmux has-session -t=$selected_name 2> /dev/null; then
+    tmux new-session -ds $selected_name -c $selected
+fi
+
+# Switch to the tmux session
+tmux switch-client -t $selected_name
+
