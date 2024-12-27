@@ -11,10 +11,9 @@ return {
     nvimtree.setup({
       view = {
         float = {
-          enable = false,         -- Enable floating window
+          enable = false, -- Enable floating window
           open_win_config = {
             relative = "editor",  -- Position relative to the editor
-            width = 60,           -- Width of the floating window
             height = vim.o.lines, -- Full height minus some padding
             row = 0,              -- Adjust this value for vertical positioning (0 for top, 1 for slightly below)
             col = 0,              -- Position from the left

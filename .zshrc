@@ -65,13 +65,15 @@ alias tt='tmux attach -t'
 alias tn='tmux new -s'
 alias tl='tmux ls'
 alias so='source'
-alias ziz='nvim ~/.zshrc && source ~/.zshrc' 
+alias ziz='nvim ~/Dotfiles/.zshrc && source ~/Dotfiles/.zshrc' 
 alias biz='nvim ~/.bashrc && source ~/.bashrc'
-alias tiz='nvim ~/.tmux.conf && tmux source-file ~/.tmux.conf'
-alias niz='nvim ~/.config/nvim'
-alias kiz='nvim ~/.config/kitty'
-alias iiz='nvim ~/.config/i3/config'
-alias lock='i3lock'
+alias tiz='nvim ~/Dotfiles/.tmux.conf && tmux source-file ~/.tmux.conf'
+alias niz='nvim ~/Dotfiles/.config/nvim'
+alias kiz='nvim ~/Dotfiles/.config/kitty'
+alias iiz='nvim ~/Dotfiles/.config/i3/config'
+alias g='ghostty'
+alias giz='nvim ~/Dotfiles/.config/ghostty/config'
+alias lock='./Desktop/work/github/i3lock-color/lock'
 alias shut='shutdown now'
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias desk='cd ~/Desktop'
@@ -94,6 +96,8 @@ alias nf='touch'
 alias z='zathura'
 alias t='tmux-sessionizer'
 alias anime='ani-cli'
+alias wiz='nvim ~/Dotfiles/.config/wezterm/wezterm.lua'
+alias dot='nvim ~/Dotfiles'
 
 #-------------------------------------------------------------------------------------------#
 export MANPAGER='nvim +Man!'
@@ -188,3 +192,10 @@ export PATH="$HOME/.config/scripts:$PATH"
 # Bind Ctrl+F to directly run the tmux-sessionizer script and show the fzf prompt
 bindkey -s '^F' 'source ~/.config/scripts/tmux-sessionizer\n'
 
+#fzf customization
+# export FZF_DEFAULT_OPTS="\
+#   --color=bg:#282828,bg+:#3c3836,fg:#ebdbb2,hl:#8ec07c,fg+:#a89984,hl+:#8ec07c \
+#   --border=rounded --preview-window=right:50%:wrap --preview 'cat {}'"
+
+# To customize prompt, run `p10k configure` or edit ~/Dotfiles/.p10k.zsh.
+[[ ! -f ~/Dotfiles/.p10k.zsh ]] || source ~/Dotfiles/.p10k.zsh
