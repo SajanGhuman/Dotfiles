@@ -29,7 +29,7 @@ To automate the setup process, I use a dedicated script available at setup_dotfi
   
    - Run the script:
 
-         ./setup.sh
+         ./setup_dotfiles.sh
 
   The script will automatically handle directory creation and symlinking using Stow.
 
