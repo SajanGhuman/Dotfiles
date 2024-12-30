@@ -60,6 +60,7 @@ alias commit='git commit -m'
 alias push='git push -u origin'
 alias branch='git branch'
 alias update='sudo pacman -Syu'
+alias t='tmux-sessionizer'
 alias ta='tmux attach'
 alias tt='tmux attach -t'
 alias tn='tmux new -s'
@@ -71,33 +72,30 @@ alias tiz='nvim ~/Dotfiles/.tmux.conf && tmux source-file ~/.tmux.conf'
 alias niz='nvim ~/Dotfiles/.config/nvim'
 alias kiz='nvim ~/Dotfiles/.config/kitty'
 alias iiz='nvim ~/Dotfiles/.config/i3/config'
-alias g='ghostty'
 alias giz='nvim ~/Dotfiles/.config/ghostty/config'
+alias wiz='nvim ~/Dotfiles/.config/wezterm/wezterm.lua'
+alias g='ghostty'
 alias lock='./Desktop/work/github/i3lock-color/lock'
 alias shut='shutdown now'
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
+alias dot='nvim ~/Dotfiles'
 alias desk='cd ~/Desktop'
 alias down='cd ~/Downloads'
 alias docs='cd ~/Documents'
 alias work='cd ~/Desktop/work'
-alias conf='~/.config'
 alias lo='i3-msg exit'
-alias c='clear'
 alias dev='npm run dev'
 alias start='npm run start'
 alias vagabond='mpv ~/Documents/yt/NA/'
 alias doc='evince'
 alias e='nautilus .'
-alias config='git --git-dir=$HOME/Dotfiles --work-tree=$HOME'
 alias bdec='xbacklight -dec 10'
 alias binc='xbacklight -inc 10'
-alias nd='mkdir'
-alias nf='touch'
 alias z='zathura'
-alias t='tmux-sessionizer'
 alias anime='ani-cli'
-alias wiz='nvim ~/Dotfiles/.config/wezterm/wezterm.lua'
-alias dot='nvim ~/Dotfiles'
+alias ff='fastfetch'
+alias cat='bat'
+alias wiki='wikiman'
 
 #-------------------------------------------------------------------------------------------#
 export MANPAGER='nvim +Man!'
@@ -146,27 +144,6 @@ export XMODIFIERS='@im=fcitx'
 export GLFW_IM_MODULE=ibus
 
 #-------------------------------------------------------------------------------------------#
-#tmuxfier
-# export PATH="$HOME/.tmuxifier/bin:$PATH"
-# eval "$(tmuxifier init -)"
-# export EDITOR=nvim
-
-# Detect the AUR wrapper
-# if pacman -Qi yay &>/dev/null ; then
-#    aurhelper="yay"
-# elif pacman -Qi paru &>/dev/null ; then
-#    aurhelper="paru"
-# fi
-#
-# function in {
-#     local pkg="$1"
-#     if pacman -Si "$pkg" &>/dev/null ; then
-#         sudo pacman -S "$pkg"
-#     else 
-#         "$aurhelper" -S "$pkg"
-#     fi
-# }
-
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
@@ -177,25 +154,5 @@ export PATH=$PATH:$HOME/go/bin
 
 export PATH="$HOME/.config/scripts:$PATH"
 
-# Define a widget to run the tmux-sessionizer script
-# run_tmux_sessionizer() {
-#   ~/.config/scripts/tmux-sessionizer
-# }
-#
-# # Register the function as a zle widget
-# zle -N run_tmux_sessionizer
-#
-# # Bind Ctrl+F to the widget
-# bindkey '^F' run_tmux_sessionizer
-
-
 # Bind Ctrl+F to directly run the tmux-sessionizer script and show the fzf prompt
 bindkey -s '^F' 'source ~/.config/scripts/tmux-sessionizer\n'
-
-#fzf customization
-# export FZF_DEFAULT_OPTS="\
-#   --color=bg:#282828,bg+:#3c3836,fg:#ebdbb2,hl:#8ec07c,fg+:#a89984,hl+:#8ec07c \
-#   --border=rounded --preview-window=right:50%:wrap --preview 'cat {}'"
-
-# To customize prompt, run `p10k configure` or edit ~/Dotfiles/.p10k.zsh.
-[[ ! -f ~/Dotfiles/.p10k.zsh ]] || source ~/Dotfiles/.p10k.zsh

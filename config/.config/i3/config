@@ -25,7 +25,7 @@ exec --no-startup-id picom
 exec --no-startup-id i3-msg 'workspace 10: Media; exec blueman-manager & exec pwvucontrol'
 exec --no-startup-id i3-msg 'workspace 9: Files; exec nautilus'
 exec --no-startup-id i3-msg 'workspace 2: Web; exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace 1: Terminal; exec wezterm start --always-new-process --class "wezterm-terminal" --fullscreen'
+exec --no-startup-id i3-msg 'workspace 1: Terminal; exec wezterm'
 exec --no-startup-id i3-msg 'workspace 1: Terminal'
 
 exec --no-startup-id i3bar --mode=invisible
