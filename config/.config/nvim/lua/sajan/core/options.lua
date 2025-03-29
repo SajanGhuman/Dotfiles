@@ -65,3 +65,4 @@ vim.api.nvim_set_hl(0, 'PmenuThumb', { bg = 'NONE' })            -- Scrollbar th
 local win = 0 -- 0 refers to the current window
 vim.api.nvim_win_set_option(win, 'winhighlight',
   'Normal:MyHighlight,Pmenu:MyHighlight,PmenuSel:MyHighlight,FloatBorder:MyHighlight')
+

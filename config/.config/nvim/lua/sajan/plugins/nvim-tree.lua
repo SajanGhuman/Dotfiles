@@ -11,13 +11,14 @@ return {
     nvimtree.setup({
       view = {
         float = {
-          enable = false, -- Enable floating window
+          enable = true,          -- Enable floating window
           open_win_config = {
             relative = "editor",  -- Position relative to the editor
             height = vim.o.lines, -- Full height minus some padding
+            width = 40,
             row = 0,              -- Adjust this value for vertical positioning (0 for top, 1 for slightly below)
-            col = 0,              -- Position from the left
-            style = "minimal",    -- No border
+            col = 0,              -- Position at the right edge (adjust width accordingly)
+            style = "minimal",    --
           },
         },
         adaptive_size = true,

@@ -26,10 +26,11 @@ exec --no-startup-id i3-msg 'workspace 10: Media; exec blueman-manager & exec pw
 exec --no-startup-id i3-msg 'workspace 9: Files; exec nautilus'
 exec --no-startup-id i3-msg 'workspace 2: Web; exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace 1: Terminal; exec wezterm'
-exec --no-startup-id i3-msg 'workspace 1: Terminal'
+# exec --no-startup-id i3-msg 'workspace 1: Terminal'
 
 exec --no-startup-id i3bar --mode=invisible
-exec --no-startup-id feh --bg-scale ~/Pictures/firefox\ downloads/8a940688de2de722a31dbe3f0b1c30f5\(1\).png
+# exec --no-startup-id feh --bg-scale ~/Pictures/firefox\ downloads/8a940688de2de722a31dbe3f0b1c30f5\(1\).png
+exec --no-startup-id feh --bg-fill ~/Downloads/cf802004be036fb4c73ac145cdc6c598.jpg.png
 exec --no-startup-id autotiling 
 # exec --no-startup-id feh --bg-scale ~/Documents/shiva_1.jpg
 # exec --no-startup-id feh --bg-scale ~/Pictures/Camera/ek.png

@@ -19,12 +19,20 @@ return {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
             ["<C-j>"] = actions.move_selection_next,     -- move to next result
-            ["<C-q"] = actions.send_selected_to_qflist + actions.open_qflist,
+            ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
           },
         },
+        file_ignore_patterns = { "node_modules", ".git" }, -- Ignore node_modules and .git directories
+        vimgrep_arguments = {
+          'rg', '--no-heading', '--with-filename', '--line-number', '--column',
+          '--smart-case' -- Use ripgrep for searching
+        },
+        preview = false,
       },
-    })
+    }
+    )
 
+    -- Load the fzf-native extension for improved fuzzy searching
     telescope.load_extension("fzf")
 
     -- Set keymaps
@@ -45,10 +53,6 @@ return {
       local word = vim.fn.expand("<cWORD>")
       builtin.grep_string({ search = word })
     end)
-
-    -- keymap.set('n', '<leader>fs', function()
-    --   builtin.grep_string({ search = vim.fn.input("Grep > ") })
-    -- end)
 
     keymap.set('n', '<leader>vh', builtin.help_tags, {})
   end,

@@ -66,14 +66,14 @@ alias tt='tmux attach -t'
 alias tn='tmux new -s'
 alias tl='tmux ls'
 alias so='source'
-alias ziz='nvim ~/Dotfiles/.zshrc && source ~/Dotfiles/.zshrc' 
+alias ziz='nvim ~/Dotfiles/zsh/.zshrc && source ~/Dotfiles/zsh/.zshrc' 
 alias biz='nvim ~/.bashrc && source ~/.bashrc'
-alias tiz='nvim ~/Dotfiles/.tmux.conf && tmux source-file ~/.tmux.conf'
-alias niz='nvim ~/Dotfiles/.config/nvim'
-alias kiz='nvim ~/Dotfiles/.config/kitty'
-alias iiz='nvim ~/Dotfiles/.config/i3/config'
-alias giz='nvim ~/Dotfiles/.config/ghostty/config'
-alias wiz='nvim ~/Dotfiles/.config/wezterm/wezterm.lua'
+alias tiz='nvim ~/Dotfiles/tmux/.tmux.conf && tmux source-file ~/Dotfiles/tmux/.tmux.conf'
+alias niz='nvim ~/Dotfiles/config/.config/nvim'
+alias kiz='nvim ~/Dotfiles/config/.config/kitty'
+alias iiz='nvim ~/Dotfiles/config/.config/i3/config'
+alias giz='nvim ~/Dotfiles/config/.config/ghostty/config'
+alias wiz='nvim ~/Dotfiles/.config/config/wezterm/wezterm.lua'
 alias g='ghostty'
 alias lock='./Desktop/work/github/i3lock-color/lock'
 alias shut='shutdown now'
@@ -96,6 +96,7 @@ alias anime='ani-cli'
 alias ff='fastfetch'
 alias cat='bat'
 alias wiki='wikiman'
+alias c='clear'
 
 #-------------------------------------------------------------------------------------------#
 export MANPAGER='nvim +Man!'
@@ -105,6 +106,10 @@ export MANWIDTH=999
 #export PATH="/usr/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init --cmd cd zsh)"
+
+#-------------------------------------------------------------------------------------------#
+#path for bluetooth
+export PATH=$PATH:/usr/lib/bluetooth
 
 #-------------------------------------------------------------------------------------------#
 export NVM_DIR="$HOME/.nvm"
@@ -153,6 +158,8 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 
 export PATH="$HOME/.config/scripts:$PATH"
+
+export PATH=$PATH:/usr/bin
 
 # Bind Ctrl+F to directly run the tmux-sessionizer script and show the fzf prompt
 bindkey -s '^F' 'source ~/.config/scripts/tmux-sessionizer\n'
