@@ -18,14 +18,15 @@ To automate the setup process, I use a dedicated script available at setup_dotfi
 
 ⬇️ Installation Steps
 
-  - Clone the setup_dotfiles repository and cd into the setup_dotfiles folder:
+  - Clone the setup_dotfiles repository in home directory and hop into the setup_dotfiles folder:
 
+        cd ~
         git clone https://github.com/SajanGhuman/setup_dotfiles.git
         cd setup_dotfiles
         
   - Make it executable:
   
-        chmod +x setup.sh
+        chmod +x setup_dotfiles.sh
   
    - Run the script:
 
@@ -41,6 +42,18 @@ Enjoy a cohesive and visually pleasing environment with Gruvbox Material themes 
   - ✏️ Neovim
   - 🪟 i3 Status Bar
 
-💡 Contributions
+⬇️ Uninstallation Steps
 
-While these dotfiles are tailored to my personal preferences, feel free to fork and adapt them to your own setup!
+  - Hop into the setup_dotfiles folder:
+
+        cd ~
+        cd setup_dotfiles
+        
+  - Make the uninstall script executable:
+  
+        chmod +x uninstall.sh
+  
+   - Run the script to uninstall everything:
+
+         ./uninstall.sh
+
