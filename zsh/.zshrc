@@ -8,14 +8,14 @@ fi
 # -----------------------
 # ⚙️ Oh-My-Zsh & Theme
 # -----------------------
-ZSH=/usr/share/oh-my-zsh/
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+ZSH="$HOME/.oh-my-zsh"
+source "$HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme"
 
 # -----------------------
 # 🔌 Plugins
 # -----------------------
 plugins=(git sudo zsh-256color zsh-autosuggestions zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # -----------------------
 # 🧠 Command Not Found Helper
@@ -149,7 +149,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 
 # asdf
-. /opt/asdf-vm/asdf.sh
+. $HOME/.asdf/asdf.sh
 
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
