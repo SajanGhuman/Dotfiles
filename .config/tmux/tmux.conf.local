@@ -1,0 +1,322 @@
+# : << 'EOF'
+# Oh my tmux!
+# 💛🩷💙🖤❤️🤍
+# https://github.com/gpakosz/.tmux
+# (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
+#         without any warranty.
+#         Copyright 2012— Gregory Pakosz (@gpakosz).
+
+
+# -- bindings ------------------------------------------------------------------
+
+# preserve tmux stock bindings,
+# while adding bindings that don't conflict with these stock bindings
+# /!\ this disables some of Oh my tmux! bindings described in README.md
+#   - true
+#   - false (default)
+tmux_conf_preserve_stock_bindings=false
+
+
+# -- session creation ----------------------------------------------------------
+
+# prompt for session name when creating a new session, possible values are:
+#   - true
+#   - false (default)
+#   - disabled (do not modify new-session bindings)
+tmux_conf_new_session_prompt=false
+
+# new session retains current path, possible values are:
+#   - true
+#   - false (default)
+#   - disabled (do not modify new-session bindings)
+tmux_conf_new_session_retain_current_path=false
+
+
+# -- windows & pane creation ---------------------------------------------------
+
+# new window retains current path, possible values are:
+#   - true
+#   - false (default)
+#   - disabled (do not modify new-window bindings)
+tmux_conf_new_window_retain_current_path=false
+
+# new window tries to reconnect ssh sessions, possible values are:
+#   - true
+#   - false (default)
+#   - disabled (do not modify new-window bindings)
+tmux_conf_new_window_reconnect_ssh=false
+
+# new pane retains current path, possible values are:
+#   - true (default)
+#   - false
+#   - disabled (do not modify split-window bindings)
+tmux_conf_new_pane_retain_current_path=true
+
+# new pane tries to reconnect ssh sessions, possible values are:
+#   - true
+#   - false (default)
+#   - disabled (do not modify split-window bindings)
+tmux_conf_new_pane_reconnect_ssh=false
+
+
+# -- display -------------------------------------------------------------------
+
+# RGB 24-bit colour support, possible values are:
+#   - true
+#   - false
+#   - auto (default)
+#
+# automatic detection relies on the COLORTERM environment variable being defined
+# to 'truecolor' or '24bit' or '$ tput colors' answering '16777216'
+# see https://github.com/termstandard/colors
+tmux_conf_24b_colour=auto
+
+
+# -- theming -------------------------------------------------------------------
+
+# enable or disable theming:
+#   - enabled (default)
+#   - disabled
+# when disabled, all tmux_conf_theme_xxx variables are ignored except:
+#   - tmux_conf_theme_pairing
+#   - tmux_conf_theme_prefix
+#   - tmux_conf_theme_mouse
+#   - tmux_conf_theme_root
+#   - tmux_conf_theme_synchronized
+tmux_conf_theme=enabled
+
+# -------------------------------
+# Gruvbox Material Green Theme (no battery)
+# -------------------------------
+
+# Gruvbox colors
+tmux_conf_theme_cursor="$cursor_color"
+tmux_conf_theme_fg="$fg_color"
+tmux_conf_theme_bg="$bg_color"
+tmux_conf_theme_selection_fg="$selection_fg"
+tmux_conf_theme_selection_bg="$selection_bg"
+
+# Light green shade (for active elements)
+tmux_conf_theme_green="#a9b665"
+
+# window style
+tmux_conf_theme_window_fg="default"
+tmux_conf_theme_window_bg="default"
+
+# highlight focused pane
+tmux_conf_theme_highlight_focused_pane=false
+tmux_conf_theme_focused_pane_bg="$tmux_conf_theme_green"
+
+# pane border style
+tmux_conf_theme_pane_border_style=thin
+tmux_conf_theme_pane_border="$tmux_conf_theme_green"
+tmux_conf_theme_pane_active_border="$tmux_conf_theme_green"
+
+# status line style
+tmux_conf_theme_message_fg="$tmux_conf_theme_fg"
+tmux_conf_theme_message_bg="$tmux_conf_theme_bg"
+tmux_conf_theme_message_attr="bold"
+
+tmux_conf_theme_message_command_fg="$tmux_conf_theme_green"
+tmux_conf_theme_message_command_bg="$tmux_conf_theme_bg"
+tmux_conf_theme_message_command_attr="bold"
+
+tmux_conf_theme_mode_fg="$tmux_conf_theme_fg"
+tmux_conf_theme_mode_bg="$tmux_conf_theme_green"
+tmux_conf_theme_mode_attr="bold"
+
+# status line (transparent middle)
+tmux_conf_theme_status_fg="$tmux_conf_theme_green"
+tmux_conf_theme_status_bg="default"
+tmux_conf_theme_status_attr="none"
+
+# window status style (transparent middle)
+tmux_conf_theme_window_status_fg="$tmux_conf_theme_green"
+tmux_conf_theme_window_status_bg="default"
+tmux_conf_theme_window_status_attr="none"
+tmux_conf_theme_window_status_format="#I #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
+
+tmux_conf_theme_window_status_current_fg="$tmux_conf_theme_bg"
+tmux_conf_theme_window_status_current_bg="$tmux_conf_theme_green"
+tmux_conf_theme_window_status_current_attr="bold"
+tmux_conf_theme_window_status_current_format="#I #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
+
+tmux_conf_theme_window_status_bell_fg="$tmux_conf_theme_green"
+tmux_conf_theme_window_status_bell_bg="default"
+tmux_conf_theme_window_status_bell_attr="blink,bold"
+
+tmux_conf_theme_window_status_last_fg="$tmux_conf_theme_green"
+tmux_conf_theme_window_status_last_bg="$tmux_conf_theme_bg"
+tmux_conf_theme_window_status_last_attr="none"
+
+# status left/right content
+tmux_conf_theme_status_left=" ❐ #S | "
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} , %R , %d %b | #{username}#{root} | #{hostname} "
+
+# status left/right colors
+tmux_conf_theme_status_left_fg="$tmux_conf_theme_bg,$tmux_conf_theme_green,$tmux_conf_theme_bg"
+tmux_conf_theme_status_left_bg="$tmux_conf_theme_green,$tmux_conf_theme_bg,$tmux_conf_theme_green"
+tmux_conf_theme_status_left_attr="bold,none,none"
+
+tmux_conf_theme_status_right_fg="$tmux_conf_theme_bg,$tmux_conf_theme_green,$tmux_conf_theme_bg"
+tmux_conf_theme_status_right_bg="$tmux_conf_theme_green,$tmux_conf_theme_bg,$tmux_conf_theme_green"
+tmux_conf_theme_status_right_attr="none,none,bold"
+
+# clock style
+tmux_conf_theme_clock_colour="$tmux_conf_theme_green"
+tmux_conf_theme_clock_style="24"
+
+# -- clipboard -----------------------------------------------------------------
+
+# in copy mode, copying selection also copies to the OS clipboard
+#   - true
+#   - false (default)
+#   - disabled
+# on Linux, this requires xsel, xclip or wl-copy
+tmux_conf_copy_to_os_clipboard=false
+
+
+# -- urlscan -------------------------------------------------------------------
+
+# options passed to urlscan
+tmux_conf_urlscan_options="--compact --dedupe"
+
+
+# -- user customizations -------------------------------------------------------
+
+# this is the place to override or undo settings
+
+# mouse support
+set -g mouse on
+
+# increase history size
+#set -g history-limit 10000
+
+# force Vi mode
+#   really you should export VISUAL or EDITOR environment variable, see manual
+#set -g status-keys vi
+#set -g mode-keys vi
+
+# Unbind the default prefixes
+unbind C-b
+unbind C-a
+
+# Set Ctrl+Space as the prefix
+set -g prefix C-Space
+
+# Make the prefix key work (send-prefix)
+bind C-Space send-prefix
+
+# Kill pane immediately without confirmation
+unbind x
+bind-key x kill-pane
+
+# Do not detach or exit tmux when the last pane is killed
+set-option -g detach-on-destroy off
+
+
+# if you don't want Oh my tmux! to alter a binding or a setting, use #!important
+# bind c new-window -c '#{pane_current_path}' #!important
+
+# display a message after toggling mouse support
+bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse" \; display 'mouse #{?#{mouse},on,off}'
+
+# move status line to top
+#set -g status-position top
+
+
+# -- tpm -----------------------------------------------------------------------
+
+# while I don't use tpm myself, many people requested official support so here
+# is a seamless integration that automatically installs plugins in parallel
+
+# whenever a plugin introduces a variable to be used in 'status-left' or
+# 'status-right', you can use it in 'tmux_conf_theme_status_left' and
+# 'tmux_conf_theme_status_right' variables.
+
+# by default, launching tmux will update tpm and all plugins
+#   - true (default)
+#   - false
+tmux_conf_update_plugins_on_launch=true
+
+# by default, reloading the configuration will update tpm and all plugins
+#   - true (default)
+#   - false
+tmux_conf_update_plugins_on_reload=true
+
+# by default, reloading the configuration will uninstall tpm and plugins when no
+# plugins are enabled
+#   - true (default)
+#   - false
+tmux_conf_uninstall_plugins_on_reload=true
+
+# /!\ the tpm bindings differ slightly from upstream:
+#   - installing plugins: <prefix> + I
+#   - uninstalling plugins: <prefix> + Alt + u
+#   - updating plugins: <prefix> + u
+
+# /!\ do not add set -g @plugin 'tmux-plugins/tpm'
+# /!\ do not add run '~/.tmux/plugins/tpm/tpm'
+
+# to enable a plugin, use the 'set -g @plugin' syntax:
+# visit https://github.com/tmux-plugins for available plugins
+#set -g @plugin 'tmux-plugins/tmux-copycat'
+#set -g @plugin 'tmux-plugins/tmux-cpu'
+#set -g @plugin 'tmux-plugins/tmux-resurrect'
+#set -g @plugin 'tmux-plugins/tmux-continuum'
+#set -g @continuum-restore 'on'
+
+
+# -- custom variables ----------------------------------------------------------
+
+# to define a custom #{foo} variable, define a POSIX shell function between the
+# '# EOF' and the '# "$@"' lines. Please note that the opening brace { character
+# must be on the same line as the function name otherwise the parse won't detect
+# it.
+#
+# then, use #{foo} in e.g. the 'tmux_conf_theme_status_left' or the
+# 'tmux_conf_theme_status_right' variables.
+
+# ------------------------------------------------------------------------------
+
+# # /!\ do not remove the following line
+# EOF
+#
+# # /!\ do not "uncomment" the functions: the leading "# " characters are needed
+#
+# # usage: #{weather}
+# weather() {                                         # see https://github.com/chubin/wttr.in#one-line-output
+#   curl -f -s -m 2 'wttr.in?format=3' || printf '\n' # /!\ make sure curl is installed
+#   sleep 900                                         # sleep for 15 minutes, throttle network requests whatever the value of status-interval
+# }
+#
+# # usage: #{online}
+# online() {
+#   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔' || printf '✘'
+# }
+#
+# # usage: #{wan_ip_v4}
+# wan_ip_v4() {
+#   curl -f -s -m 2 -4 ifconfig.me
+#   sleep 300                                         # sleep for 5 minutes, throttle network requests whatever the value of status-interval
+# }
+#
+# # usage: #{wan_ip_v6}
+# wan_ip_v6() {
+#   curl -f -s -m 2 -6 ifconfig.me
+#   sleep 300                                         # sleep for 5 minutes, throttle network requests whatever the value of status-interval
+# }
+#
+# # usage: #{github_stars}, #{github_stars tmux/tmux}, ...
+# github_stars() {
+#   repository=${1##*https://github.com/}
+#   repository=${repository%% *}
+#   repository=${repository%%.git}
+#   url="https://api.github.com/repos/${repository:-gpakosz/.tmux}"
+#   curl -s "$url" | perl -MJSON::PP=decode_json -CO -0777 -E '$response = decode_json(readline *STDIN); say ($response->{stargazers_count})'
+#   sleep 300                                         # sleep for 5 minutes, throttle network requests whatever the value of status-interval
+# }
+#
+# "$@"
+# # /!\ do not remove the previous line
+# #     do not write below this line
