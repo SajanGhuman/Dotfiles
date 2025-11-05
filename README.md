@@ -5,7 +5,7 @@ Welcome to my dotfiles — a curated setup for a clean, fast, and visually consi
 ## ✨ Features
 
 - **Arch Linux**
-  > Yes, I use Arch — but really, it's just set up the way *I* like it.
+  > Yes, I use Arch BTW — but really, it's just set up the way *I* like it.
 
 - **Hyprland + Omnarchy**
   Wayland compositor with smooth animations, efficient tiling, and endless customization.
