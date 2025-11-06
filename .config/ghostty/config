@@ -2,9 +2,9 @@
 config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
 
 # Font
-font-family = "CaskaydiaMono Nerd Font"
+font-family = "Maple Mono"
 font-style = Regular
-font-size = 18
+font-size = 20
 
 # Window
 window-padding-x = 14
@@ -17,5 +17,4 @@ command = /usr/bin/zsh
 cursor-style = "block"
 cursor-style-blink = false
 
-mouse-scroll-multiplier = 3
-
+mouse-scroll-multiplier = 1

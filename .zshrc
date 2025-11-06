@@ -38,8 +38,8 @@ function command_not_found_handler {
 # -----------------------
 # 🌈 Prompt Config (Powerlevel10k)
 # -----------------------
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # -----------------------
 # 🧩 Aliases
@@ -66,18 +66,18 @@ alias shut='shutdown now'
 
 # ZSH reload
 alias so='source'
-alias ziz='nvim ~/dotfiles/.zshrc && source ~/dotfiles/.zshrc'
-alias biz='nvim ~/dotfiles/.bashrc && source ~/dotfiles/.bashrc'
-alias niz='nvim ~/dotfiles/.config/nvim'
-alias tiz='nvim ~/dotfiles/.config/tmux'
-alias giz='nvim ~/dotfiles/.config/ghostty/config'
-alias hiz='nvim ~/dotfiles/.config/hypr'
+alias ziz='nvim ~/Dotfiles/.zshrc && source ~/Dotfiles/.zshrc'
+alias biz='nvim ~/Dotfiles/.bashrc && source ~/Dotfiles/.bashrc'
+alias niz='nvim ~/Dotfiles/.config/nvim'
+alias tiz='nvim ~/Dotfiles/.config/tmux'
+alias giz='nvim ~/Dotfiles/.config/ghostty/config'
+alias hiz='nvim ~/Dotfiles/.config/hypr'
 
 # Navigation
 alias desk='cd ~/Desktop'
 alias down='cd ~/Downloads'
 alias docs='cd ~/Documents'
-alias dot='cd ~/dotfiles'
+alias dot='cd ~/Dotfiles'
 
 # Other tools
 alias dev='npm run dev'
