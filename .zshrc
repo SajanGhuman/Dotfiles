@@ -66,12 +66,14 @@ alias shut='shutdown now'
 
 # ZSH reload
 alias so='source'
-alias ziz='nvim ~/Dotfiles/.zshrc && source ~/Dotfiles/.zshrc'
+alias iz='nvim ~/Dotfiles/.zshrc && source ~/Dotfiles/.zshrc'
 alias biz='nvim ~/Dotfiles/.bashrc && source ~/Dotfiles/.bashrc'
 alias niz='nvim ~/Dotfiles/.config/nvim'
 alias tiz='nvim ~/Dotfiles/.config/tmux'
 alias giz='nvim ~/Dotfiles/.config/ghostty/config'
 alias hiz='nvim ~/Dotfiles/.config/hypr'
+alias oiz='nvim ~/Dotfiles/.config/omarchy'
+alias ziz='nvim ~/Dotfiles/.config/zellij'
 
 # Navigation
 alias desk='cd ~/Desktop'
