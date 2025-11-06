@@ -214,7 +214,6 @@ bind-key x kill-pane
 # Do not detach or exit tmux when the last pane is killed
 set-option -g detach-on-destroy off
 
-
 # if you don't want Oh my tmux! to alter a binding or a setting, use #!important
 # bind c new-window -c '#{pane_current_path}' #!important
 
@@ -224,6 +223,19 @@ bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse" \; display 'mouse #{?
 # move status line to top
 #set -g status-position top
 
+# Unbind any previous definitions
+unbind -T prefix C-n
+unbind -T prefix C-p
+unbind C-n
+unbind C-p
+
+# Prefix + Ctrl-n / Ctrl-p to switch panes
+bind-key -T prefix C-n select-pane -t:.+
+bind-key -T prefix C-p select-pane -t:.-
+
+# OPTIONAL: allow switching without prefix too (comment out if not wanted)
+# bind-key -n C-n select-pane -t:.+
+# bind-key -n C-p select-pane -t:.-
 
 # -- tpm -----------------------------------------------------------------------
 

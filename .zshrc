@@ -87,6 +87,10 @@ alias e='nautilus .'
 alias ff='fastfetch'
 alias cat='bat'
 alias wiki='wikiman'
+alias t='tmux'
+
+# Zellij
+alias z='zellij --layout ~/.config/zellij/default_layout.kdl'
 
 # -----------------------
 # 🧾 Manpages in Neovim
