@@ -12,18 +12,18 @@ return {
 		-- setup with minimal options
 		require("nvim-tree").setup({
 			sort = {
-				sorter = "case_sensitive",
-			},
+        sorter = "case_sensitive",
+      },
 			view = {
-				width = 30,
-				side = "left",
-			},
+        width = 30,
+        side = "left",
+      },
 			renderer = {
 				group_empty = false,
 			},
 			filters = {
-				dotfiles = false,
-			},
+        dotfiles = false,
+      },
       git = {
         ignore = false
       }

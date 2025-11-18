@@ -37,10 +37,10 @@ return {
 					["<C-k>"] = require("telescope.actions").move_selection_previous,
 					["<C-j>"] = require("telescope.actions").move_selection_next,
 					["<C-q>"] = function(prompt_bufnr)
-						local actions = require("telescope.actions")
-						actions.send_selected_to_qflist(prompt_bufnr)
-						actions.open_qflist()
-					end,
+            local actions = require("telescope.actions")
+            actions.send_selected_to_qflist(prompt_bufnr)
+            actions.open_qflist()
+          end,
 				},
 			},
 		},
@@ -70,6 +70,6 @@ return {
 		end)
 
 		-- Help tags
-		keymap.set("n", "<leader>vh", builtin.help_tags, { desc = "Search help tags" })
+		keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Search help tags" })
 	end,
 }

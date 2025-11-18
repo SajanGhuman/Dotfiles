@@ -242,6 +242,9 @@ keybinds clear-defaults=true {
         bind "p" { GoToPreviousTab; SwitchToMode "normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "normal"; }
     }
+    unbind "Ctrl o"
+    unbind "Ctrl i"
+
 }
 
 // Plugin aliases - can be used to change the implementation of Zellij
