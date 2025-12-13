@@ -59,6 +59,7 @@ alias po='$aurhelper -Qtdq | $aurhelper -Rns -'
 
 # NPM
 alias n='npm'
+alias ni='npm install'
 
 # System
 alias update='sudo pacman -Syu'

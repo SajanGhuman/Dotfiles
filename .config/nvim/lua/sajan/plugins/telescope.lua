@@ -7,18 +7,19 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		"folke/todo-comments.nvim",
 	},
+
 	opts = {
 		defaults = {
 			layout_strategy = "horizontal",
 			layout_config = {
 				horizontal = {
-					prompt_position = "top", -- prompt at the top
+					prompt_position = "bottom",
 					preview_width = 0.55,
 					results_width = 0.8,
 				},
 				width = 0.9,
 				height = 0.85,
-				preview_cutoff = 120,
+				preview_cutoff = 80,
 			},
 			sorting_strategy = "ascending",
 			winblend = 0,
@@ -37,39 +38,42 @@ return {
 					["<C-k>"] = require("telescope.actions").move_selection_previous,
 					["<C-j>"] = require("telescope.actions").move_selection_next,
 					["<C-q>"] = function(prompt_bufnr)
-            local actions = require("telescope.actions")
-            actions.send_selected_to_qflist(prompt_bufnr)
-            actions.open_qflist()
-          end,
+						local actions = require("telescope.actions")
+						actions.send_selected_to_qflist(prompt_bufnr)
+						actions.open_qflist()
+					end,
 				},
 			},
 		},
 	},
-	config = function()
-		local telescope = require("telescope")
-		telescope.load_extension("fzf") -- fzf-native extension
 
+	config = function(_, opts)
+		local telescope = require("telescope")
+
+		-- IMPORTANT: apply opts
+		telescope.setup(opts)
+
+		-- load extensions AFTER setup
+		telescope.load_extension("fzf")
+
+		-- keymaps
 		local keymap = vim.keymap
 		local builtin = require("telescope.builtin")
 
-		-- File pickers
-		keymap.set("n", "<leader><leader>", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+		keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Find files" })
+		keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Live grep" })
+		keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
+
+		-- grep word under cursor
+		keymap.set("n", "<leader>fws", function()
+			builtin.grep_string({ search = vim.fn.expand("<cword>") })
+		end)
+
+		keymap.set("n", "<leader>fWs", function()
+			builtin.grep_string({ search = vim.fn.expand("<cWORD>") })
+		end)
 
 		-- TODO comments
-		keymap.set("n", "<leader>fl", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
-
-		-- Grep current word
-		keymap.set("n", "<leader>fws", function()
-			local word = vim.fn.expand("<cword>")
-			builtin.grep_string({ search = word })
-		end)
-		keymap.set("n", "<leader>fWs", function()
-			local word = vim.fn.expand("<cWORD>")
-			builtin.grep_string({ search = word })
-		end)
-
-		-- Help tags
-		keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Search help tags" })
+		keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Todos" })
 	end,
 }
