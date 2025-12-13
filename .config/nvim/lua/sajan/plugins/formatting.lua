@@ -21,20 +21,18 @@ return {
 				python = { "isort", "black" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
+				norg = { "injected" },
 			},
+
 			formatters = {
 				prettier_local = {
 					command = "npx",
-					args = {
-						"prettier",
-						"--stdin-filepath",
-						"$FILENAME",
-						"--plugin",
-						"prettier-plugin-tailwindcss",
-					},
+					args = { "prettier", "--stdin-filepath", "$FILENAME" },
+					require_cwd = true,
 				},
 			},
 		})
+
 		vim.keymap.set({ "n", "v" }, "<leader>v", function()
 			require("conform").format({
 				lsp_fallback = true,

@@ -3,7 +3,7 @@ local opt = vim.opt -- for conciseness
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
--- opt.guicursor = ""        -- shows thick cursor all the time
+opt.guicursor = "" -- shows thick cursor all the time
 
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
@@ -12,7 +12,14 @@ opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
 -- line wrapping
-opt.wrap = false -- disable line wrapping
+-- opt.wrap = false -- disable line wrapping
+opt.wrap = true -- enable visual line wrapping
+opt.linebreak = true -- wrap at word boundaries
+opt.breakindent = true -- keep indentation on wrapped lines
+
+-- move j/k by visual ones and not logical lines.
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching

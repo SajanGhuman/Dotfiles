@@ -9,6 +9,7 @@ return {
 				["core.concealer"] = {
 					config = { -- We added a `config` table!
 						icon_preset = "varied", -- And we set our option here.
+						folds = true,
 					},
 				},
 				["core.dirman"] = {
@@ -16,6 +17,11 @@ return {
 						workspaces = {
 							notes = "~/Notes",
 						},
+					},
+				},
+				["core.export"] = {
+					config = {
+						export_dir = "~/Notes/notes_export", -- output folder
 					},
 				},
 			},
