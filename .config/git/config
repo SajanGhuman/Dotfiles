@@ -1,0 +1,75 @@
+# See https://git-scm.com/docs/git-config
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[init]
+	defaultBranch = master
+[pull]
+	rebase = true
+  current = true
+[push]
+	autoSetupRemote = true
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+  context = 3
+  renames = copies
+  interHunkContext = 10
+[diff-so-fancy]
+  markEmptyLines = false
+  file = cyan bold
+  hunk = yellow bold
+  added = green
+  removed = red
+  meta = dim
+[color "diff"]
+  meta       = "#3c3836"
+  frag       = "#d8a657"
+  old        = "#ea6962"
+  new        = "#a9b665"
+  whitespace = "#d8a657" reverse
+[color "diff-so-fancy"]
+  file     = "#7daea3" bold
+  hunk     = "#d8a657" bold
+  added    = "#a9b665"
+  removed  = "#ea6962"
+  meta     = "#3c3836"
+  context  = "#d4be98"
+[commit]
+	verbose = true
+	gpgsign = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = -version:refname
+[rerere]
+	enabled = true
+	autoupdate = true
+[user]
+	email = sajanghuman18@gmail.com
+	name = Sajanpreet Singh
+	signingkey = /home/sajan/.ssh/id_ed25519.pub
+[core]
+  compression = 9
+  whitespace = error
+  preloadindex = true
+[advice]
+  addEmptyPathspec = false
+  pushNonFastForward = false
+  statusHint = false
+[url "git@github.com:SajanGhuman/"]
+  insteadOf = "sg:"
+[url "git@github.com:"]
+  insteadOf = "gh:"
+[pager]
+  diff = diff-so-fancy | $PAGER
+[singleKey]
+  diffFilter = diff-so-fancy --patch
+[gpg]
+	format = ssh

@@ -9,7 +9,7 @@ fi
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-plugins=(git nvm zsh-nvm zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat)
+plugins=(nvm zsh-nvm zsh-autosuggestions zsh-syntax-highlighting zsh-bat)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,6 +49,21 @@ alias ls='eza -1 --icons=auto'
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first'
 alias ld='eza -lhD --icons=auto'
 
+# # Git
+# alias gl='git log --graph --pretty=folmat:"%Cred%h%Creset - %s %Cgreen(%ar) %C(bold blue)[%an]%Creset%C(yellow)%d%Creset" --abbrev-commit'
+alias gl="git log --graph --pretty=format:'%Cred%h %Cblue%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gs='git status'
+alias 'g?'='clear -x; git status; git log --oneline -4'
+alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
+alias ga='git add'
+alias gap='git add -p'
+alias gc='git commit'
+alias gp='git push'
+alias gu='git pull'
+alias gb='git branch'
+alias gi='git init'
+alias gcl='git clone'
+
 # AUR aliases
 alias un='$aurhelper -Rns'
 alias up='$aurhelper -Syu'
@@ -71,10 +86,12 @@ alias iz='nvim ~/Dotfiles/.zshrc && source ~/Dotfiles/.zshrc'
 alias biz='nvim ~/Dotfiles/.bashrc && source ~/Dotfiles/.bashrc'
 alias niz='nvim ~/Dotfiles/.config/nvim'
 alias tiz='nvim ~/Dotfiles/.config/tmux'
-alias giz='nvim ~/Dotfiles/.config/ghostty/config'
+alias giz='nvim ~/Dotfiles/.config/git/config'
+alias ghiz='nvim ~/Dotfiles/.config/ghostty/config'
 alias hiz='nvim ~/Dotfiles/.config/hypr'
 alias oiz='nvim ~/Dotfiles/.config/omarchy'
 alias ziz='nvim ~/Dotfiles/.config/zellij'
+alias v='nvim'
 alias vim='nvim'
 
 # Navigation
