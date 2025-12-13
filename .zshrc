@@ -57,8 +57,8 @@ alias pa='$aurhelper -Ss'
 alias pc='$aurhelper -Sc'
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -'
 
-# Editor / Git
-alias n='nvim'
+# NPM
+alias n='npm'
 
 # System
 alias update='sudo pacman -Syu'
@@ -74,6 +74,7 @@ alias giz='nvim ~/Dotfiles/.config/ghostty/config'
 alias hiz='nvim ~/Dotfiles/.config/hypr'
 alias oiz='nvim ~/Dotfiles/.config/omarchy'
 alias ziz='nvim ~/Dotfiles/.config/zellij'
+alias vim='nvim'
 
 # Navigation
 alias desk='cd ~/Desktop'
