@@ -41,7 +41,7 @@
   context  = "#d4be98"
 [commit]
 	verbose = true
-	gpgsign = true
+	gpgSign = true
 [column]
 	ui = auto
 [branch]
@@ -54,7 +54,7 @@
 [user]
 	email = sajanghuman18@gmail.com
 	name = Sajanpreet Singh
-	signingkey = /home/sajan/.ssh/id_ed25519.pub
+	signingkey = 4E271894A03C8F68
 [core]
   compression = 9
   whitespace = error
@@ -73,3 +73,4 @@
   diffFilter = diff-so-fancy --patch
 [gpg]
 	format = ssh
+	program = gpg
