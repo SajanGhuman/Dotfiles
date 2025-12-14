@@ -72,5 +72,4 @@
 [singleKey]
   diffFilter = diff-so-fancy --patch
 [gpg]
-	format = ssh
 	program = gpg
