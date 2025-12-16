@@ -1,7 +1,3 @@
--- Set highlight groups for floating windows
-vim.api.nvim_set_hl(0, 'MyCustomHighlight', { fg = 'NONE', bg = 'NONE' }) -- No background or foreground color for text
-vim.api.nvim_set_hl(0, 'FloatBorder', { fg = 'NONE', bg = 'NONE' })       -- No border color
-
 return {
   "ThePrimeagen/harpoon",
   enabled = true,
