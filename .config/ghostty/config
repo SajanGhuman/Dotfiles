@@ -18,3 +18,5 @@ cursor-style = "block"
 cursor-style-blink = false
 
 mouse-scroll-multiplier = 1
+keybind = ctrl+n=text:\x0e
+keybind = ctrl+p=text:\x10

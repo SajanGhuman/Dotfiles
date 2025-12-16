@@ -1,1 +1,0 @@
-/home/sajan/.local/share/omarchy/themes/gruvbox/neovim.lua
