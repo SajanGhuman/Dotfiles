@@ -2,7 +2,7 @@
 config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
 
 # Font
-font-family = "Maple Mono"
+font-family = "Maple Mono NF"
 font-style = Regular
 font-size = 20
 
@@ -18,5 +18,3 @@ cursor-style = "block"
 cursor-style-blink = false
 
 mouse-scroll-multiplier = 1
-keybind = ctrl+n=text:\x0e
-keybind = ctrl+p=text:\x10

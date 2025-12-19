@@ -73,7 +73,6 @@ alias pc='$aurhelper -Sc'
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -'
 
 # NPM
-alias n='npm'
 alias ni='npm install'
 
 # System
@@ -93,6 +92,7 @@ alias oiz='nvim ~/Dotfiles/.config/omarchy'
 alias ziz='nvim ~/Dotfiles/.config/zellij'
 alias v='nvim'
 alias vim='nvim'
+alias n='nvim'
 
 # Navigation
 alias desk='cd ~/Desktop'

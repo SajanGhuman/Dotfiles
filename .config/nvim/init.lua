@@ -29,5 +29,6 @@ require("lazy").setup({
     require("plugins.indent-blackline"),
     require("plugins.trouble"),
     require("plugins.todocomments"),
-    require("plugins.yazi")
+    require("plugins.yazi"),
+    require("plugins.diagnostics")
 })
