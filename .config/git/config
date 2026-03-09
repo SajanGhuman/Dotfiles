@@ -41,7 +41,7 @@
   context  = "#d4be98"
 [commit]
 	verbose = true
-	gpgSign = true
+	gpgsign = true
 [column]
 	ui = auto
 [branch]
@@ -52,9 +52,10 @@
 	enabled = true
 	autoupdate = true
 [user]
-	email = sajanghuman18@gmail.com
+	email = social@sajanghuman.com
 	name = Sajanpreet Singh
-	signingkey = 4E271894A03C8F68
+	signkey = C2AF4B87D9B77A25
+	signingkey = C2AF4B87D9B77A25
 [core]
   compression = 9
   whitespace = error

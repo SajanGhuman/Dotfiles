@@ -1,1 +1,1 @@
-/home/sajan/Dotfiles/.config/omarchy/themes/gruvbox/theme.lua
+/home/sajan/Dotfiles/.config/omarchy/current/theme/neovim.lua
