@@ -21,7 +21,6 @@ require("lazy").setup({
 	-- require("plugins.whichkey"),
 	require("plugins.lazydev"),
 	require("plugins.blink"),
-	require("plugins.transparent"),
 	require("plugins.conform"),
     require("plugins.colorizer"),
     require("plugins.tabout"),

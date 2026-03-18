@@ -1,76 +1,90 @@
 # See https://git-scm.com/docs/git-config
 
-[alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
-[init]
-	defaultBranch = master
-[pull]
-	rebase = true
-  current = true
-[push]
-	autoSetupRemote = true
-[diff]
-	algorithm = histogram
-	colorMoved = plain
-	mnemonicPrefix = true
-  context = 3
-  renames = copies
-  interHunkContext = 10
-[diff-so-fancy]
-  markEmptyLines = false
-  file = cyan bold
-  hunk = yellow bold
-  added = green
-  removed = red
-  meta = dim
-[color "diff"]
-  meta       = "#3c3836"
-  frag       = "#d8a657"
-  old        = "#ea6962"
-  new        = "#a9b665"
-  whitespace = "#d8a657" reverse
-[color "diff-so-fancy"]
-  file     = "#7daea3" bold
-  hunk     = "#d8a657" bold
-  added    = "#a9b665"
-  removed  = "#ea6962"
-  meta     = "#3c3836"
-  context  = "#d4be98"
-[commit]
-	verbose = true
-	gpgsign = true
-[column]
-	ui = auto
-[branch]
-	sort = -committerdate
-[tag]
-	sort = -version:refname
-[rerere]
-	enabled = true
-	autoupdate = true
 [user]
-	email = social@sajanghuman.com
-	name = Sajanpreet Singh
-	signkey = C2AF4B87D9B77A25
-	signingkey = C2AF4B87D9B77A25
+    name       = Sajanpreet Singh
+    email      = social@sajanghuman.com
+    signingkey = C2AF4B87D9B77A25  # GPG key used to sign commits
+
+[init]
+    defaultBranch = main  # Use "main" instead of "master" for new repos
+
 [core]
-  compression = 9
-  whitespace = error
-  preloadindex = true
-[advice]
-  addEmptyPathspec = false
-  pushNonFastForward = false
-  statusHint = false
+    compression    = 9      # Max zlib compression — slower CPU, faster network transfers
+    whitespace     = error  # Reject commits that introduce trailing whitespace
+    preloadindex   = true   # Load index into memory in parallel — speeds up status/diff
+
+[alias]
+    co = checkout  # "git co" instead of "git checkout"
+
+# Short-hand push/clone URLs
+# Usage: git clone sg:repo_name  →  git@github.com:SajanGhuman/repo_name
 [url "git@github.com:SajanGhuman/"]
-  insteadOf = "sg:"
+    insteadOf = "sg:"
+
+# Usage: git clone gh:owner/repo  →  git@github.com:owner/repo
 [url "git@github.com:"]
-  insteadOf = "gh:"
+    insteadOf = "gh:"
+
+[status]
+    branch             = true  # Always show branch/tracking info at the top of "git status"
+    showStash          = true  # Show stash count in "git status" output
+    showUntrackedFiles = all   # Show every untracked file, not just untracked directories
+
+[diff]
+    algorithm        = histogram  # Smarter diff algorithm — better at handling moved blocks
+    colorMoved       = plain      # Highlight lines that were moved (not just added/removed)
+    mnemonicPrefix   = true       # Use i/w/c/o prefixes instead of a/b (index, worktree, etc.)
+    context          = 3          # Lines of context shown around each change
+    renames          = copies     # Detect both renames and copies
+    interHunkContext = 10         # Show extra context lines between nearby diff hunks
+
+# Pipe diffs through diff-so-fancy for a more readable output
 [pager]
-  diff = diff-so-fancy | $PAGER
-[singleKey]
-  diffFilter = diff-so-fancy --patch
-[gpg]
-	program = gpg
+    diff = diff-so-fancy | $PAGER
+
+# diff-so-fancy display settings
+[diff-so-fancy]
+    markEmptyLines = false      # Don't highlight empty lines at the start/end of a hunk
+    file           = cyan bold  # Filename header colour
+    hunk           = yellow bold  # Hunk header (@@ ... @@) colour
+    added          = green      # Colour for added lines
+    removed        = red        # Colour for removed lines
+    meta           = dim        # Colour for metadata lines
+
+# Colours for the built-in "git diff" output
+[color "diff"]
+    meta       = "#3c3836"           # Metadata lines (e.g. "diff --git ...")
+    frag       = "#d8a657"           # Hunk headers (@@ ... @@)
+    old        = "#ea6962"           # Removed lines
+    new        = "#a9b665"           # Added lines
+    whitespace = "#d8a657" reverse   # Highlight bad whitespace
+
+# Colours used specifically by diff-so-fancy
+[color "diff-so-fancy"]
+    file    = "#7daea3" bold  # Filename header
+    hunk    = "#d8a657" bold  # Hunk header
+    added   = "#a9b665"       # Added lines
+    removed = "#ea6962"       # Removed lines
+    meta    = "#3c3836"       # Metadata
+    context = "#d4be98"       # Unchanged context lines
+
+[interactive]
+    diffFilter = diff-so-fancy --patch  # Use diff-so-fancy in interactive commands (e.g. "git add -p")
+    singlekey  = true                   # No need to press Enter when choosing y/n/s/etc.
+
+[commit]
+    verbose = true   # Show the full diff in the commit message editor as a reference
+    gpgsign = true   # Automatically GPG-sign every commit
+
+[column]
+    ui = auto  # Display branch/tag lists in columns when output is to a terminal
+
+[rerere]
+    enabled    = true  # Remember how you resolved merge conflicts and replay the fix automatically
+    autoupdate = true  # Auto-stage files after rerere resolves them
+
+# Disabled advice messages (uncomment to suppress)
+# [advice]
+#     addEmptyPathspec    = false  # Suppress "did you mean to use a pathspec?" warning
+#     pushNonFastForward  = false  # Suppress non-fast-forward push hint
+#     statusHint          = false  # Suppress "use git add/rm" hints in status output

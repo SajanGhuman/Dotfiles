@@ -49,6 +49,9 @@ alias ls='eza -1 --icons=auto'
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first'
 alias ld='eza -lhD --icons=auto'
 
+#Sudo Editor
+alias sudonvim='sudo -E XDG_CONFIG_HOME=$HOME/.config nvim'
+
 # # Git
 # alias gl='git log --graph --pretty=folmat:"%Cred%h%Creset - %s %Cgreen(%ar) %C(bold blue)[%an]%Creset%C(yellow)%d%Creset" --abbrev-commit'
 alias gl="git log --graph --pretty=format:'%Cred%h %Cblue%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
