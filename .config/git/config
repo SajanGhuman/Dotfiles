@@ -42,24 +42,9 @@
 [pager]
     diff = diff-so-fancy | $PAGER
 
-# diff-so-fancy display settings
 [diff-so-fancy]
-    markEmptyLines = false      # Don't highlight empty lines at the start/end of a hunk
-    file           = cyan bold  # Filename header colour
-    hunk           = yellow bold  # Hunk header (@@ ... @@) colour
-    added          = green      # Colour for added lines
-    removed        = red        # Colour for removed lines
-    meta           = dim        # Colour for metadata lines
+    markEmptyLines = false  # Don't highlight empty lines at the start/end of a hunk
 
-# Colours for the built-in "git diff" output
-[color "diff"]
-    meta       = "#3c3836"           # Metadata lines (e.g. "diff --git ...")
-    frag       = "#d8a657"           # Hunk headers (@@ ... @@)
-    old        = "#ea6962"           # Removed lines
-    new        = "#a9b665"           # Added lines
-    whitespace = "#d8a657" reverse   # Highlight bad whitespace
-
-# Colours used specifically by diff-so-fancy
 [color "diff-so-fancy"]
     file    = "#7daea3" bold  # Filename header
     hunk    = "#d8a657" bold  # Hunk header
@@ -75,6 +60,11 @@
 [commit]
     verbose = true   # Show the full diff in the commit message editor as a reference
     gpgsign = true   # Automatically GPG-sign every commit
+
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
 
 [column]
     ui = auto  # Display branch/tag lists in columns when output is to a terminal
