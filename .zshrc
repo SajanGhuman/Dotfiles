@@ -113,6 +113,9 @@ alias cat='bat'
 alias wiki='wikiman'
 alias t='tmux'
 
+# cleanup arch
+alias cleanup=ncdu / --exclude /media --exclude /run/timeshift
+
 # Zellij
 alias z='zellij --layout ~/.config/zellij/default_layout.kdl'
 
