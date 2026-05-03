@@ -1,9 +1,8 @@
 return {
-  "norcalli/nvim-colorizer.lua",
-  config = function()
-    require('colorizer').setup({
-      '*',
-      css = { rgb_fn = true }
-    })
-  end
+	"catgoose/nvim-colorizer.lua",
+	event = "BufReadPre",
+	opts = {
+		"*",
+		css = { rgb_fn = true },
+	},
 }
