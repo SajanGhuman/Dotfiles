@@ -1,0 +1,2 @@
+exec-once = uwsm app --ghostty --workspace=1 --title "Terminal"
+exec-once = uwsm app --brave --workspace=2 --title "Brave"
